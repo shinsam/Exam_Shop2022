@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="4dp"
+    tools:context=".ShopActivity">
+
+    <!-- <RelativeLayout
+         android:layout_width="match_parent"
+
+         android:layout_height="240dp">
+         <ImageView
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:id="@+id/img_sub1"
+             android:layout_margin="4dp"
+
+             android:src="@drawable/product1" />
+         <ImageView
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:id="@+id/img_sub2"
+             android:layout_margin="4dp"
+             android:layout_below="@id/img_sub1"
+             android:src="@drawable/product2" />
+         <ImageView
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:id="@+id/img_sub3"
+             android:layout_margin="4dp"
+             android:layout_below="@id/img_sub2"
+             android:src="@drawable/product3" />
+ -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:id="@+id/img_product_main"
+        android:src="@drawable/product1" />
+    <!--  </RelativeLayout>-->
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="소고기와 치즈맛 (1,500원)" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="불고기맛 (2,000원)" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="치킨 맛(3,000원)" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/btn_minus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="-"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edit_count"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btn_minus"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="1"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/edit_count"
+            android:text="+"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#C62E2E"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+    <!--    금액 계산-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+
+            <TextView android:text="배송비(10,000원이상 구입시 무료)" />
+
+            <TextView
+                android:text="2500원"
+                android:gravity="right"
+                android:id="@+id/txt_delivery" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="총 결제 금액"
+                android:textStyle="bold"
+                android:textColor="#DC1255" />
+
+            <TextView
+                android:id="@+id/txt_pay"
+                android:gravity="right"
+                android:text=""
+                android:textSize="24sp"
+                android:textColor="#DC1255"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/chk_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="위 내용을 확인하였으며 결제에 동의합니다." />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="결제하기"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_pay" />
+    </RelativeLayout>
+
+</LinearLayout>
